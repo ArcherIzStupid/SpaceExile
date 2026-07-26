@@ -1,0 +1,1265 @@
+fileFormatVersion: 2
+guid: 02dde151923842b4897bab300a8ad3d8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1689257699474744407
+    second: Astronaut Sprite Sheet_0
+  - first:
+      213: -932140666334432667
+    second: Astronaut Sprite Sheet_1
+  - first:
+      213: 4216054285431377468
+    second: Astronaut Sprite Sheet_2
+  - first:
+      213: -4714836291704107027
+    second: Astronaut Sprite Sheet_3
+  - first:
+      213: 7732144460003150964
+    second: Astronaut Sprite Sheet_4
+  - first:
+      213: 6485399722176353345
+    second: Astronaut Sprite Sheet_5
+  - first:
+      213: -5209110647952277755
+    second: Astronaut Sprite Sheet_6
+  - first:
+      213: -3853656733620729780
+    second: Astronaut Sprite Sheet_7
+  - first:
+      213: 7003679716001947386
+    second: Astronaut Sprite Sheet_8
+  - first:
+      213: 4912570509980067936
+    second: Astronaut Sprite Sheet_9
+  - first:
+      213: 5199785199117511870
+    second: Astronaut Sprite Sheet_10
+  - first:
+      213: -7431535896563970578
+    second: Astronaut Sprite Sheet_11
+  - first:
+      213: -7502977322733741475
+    second: Astronaut Sprite Sheet_12
+  - first:
+      213: -72889040829652581
+    second: Astronaut Sprite Sheet_13
+  - first:
+      213: 4426450042288375710
+    second: Astronaut Sprite Sheet_14
+  - first:
+      213: -5292798294108097215
+    second: Astronaut Sprite Sheet_15
+  - first:
+      213: -6486993053059990172
+    second: Astronaut Sprite Sheet_16
+  - first:
+      213: -744148769826063101
+    second: Astronaut Sprite Sheet_17
+  - first:
+      213: -6104206014450686657
+    second: Astronaut Sprite Sheet_18
+  - first:
+      213: 4621023242057108968
+    second: Astronaut Sprite Sheet_19
+  - first:
+      213: -1083230385223340934
+    second: Astronaut Sprite Sheet_20
+  - first:
+      213: -5015119496898199848
+    second: Astronaut Sprite Sheet_21
+  - first:
+      213: -8119626513045513653
+    second: Astronaut Sprite Sheet_22
+  - first:
+      213: 5435313995498207964
+    second: Astronaut Sprite Sheet_23
+  - first:
+      213: -4874626764444135845
+    second: Astronaut Sprite Sheet_24
+  - first:
+      213: 3497814012987586123
+    second: Astronaut Sprite Sheet_25
+  - first:
+      213: -3963207870598561262
+    second: Astronaut Sprite Sheet_26
+  - first:
+      213: 4280302295372835971
+    second: Astronaut Sprite Sheet_27
+  - first:
+      213: -4956059543201497078
+    second: Astronaut Sprite Sheet_28
+  - first:
+      213: -6801781043363840182
+    second: Astronaut Sprite Sheet_29
+  - first:
+      213: 1146195139212240336
+    second: Astronaut Sprite Sheet_30
+  - first:
+      213: -8106967145453947914
+    second: Astronaut Sprite Sheet_31
+  - first:
+      213: -953588829704498514
+    second: Astronaut Sprite Sheet_32
+  - first:
+      213: 3250614155362549234
+    second: Astronaut Sprite Sheet_33
+  - first:
+      213: -2511817581251888118
+    second: Astronaut Sprite Sheet_34
+  - first:
+      213: -4534917835018469294
+    second: Astronaut Sprite Sheet_35
+  - first:
+      213: -5444293693895059054
+    second: Astronaut Sprite Sheet_36
+  - first:
+      213: -1822784310135517186
+    second: Astronaut Sprite Sheet_37
+  - first:
+      213: 8868273242976871102
+    second: Astronaut Sprite Sheet_38
+  - first:
+      213: 4964505481152845293
+    second: Astronaut Sprite Sheet_39
+  - first:
+      213: 8364720536867007149
+    second: Astronaut Sprite Sheet_40
+  - first:
+      213: -2597655805026216207
+    second: Astronaut Sprite Sheet_41
+  - first:
+      213: 5539695685533654100
+    second: Astronaut Sprite Sheet_42
+  - first:
+      213: 3290733347559284333
+    second: Astronaut Sprite Sheet_43
+  - first:
+      213: 1152342520490869157
+    second: Astronaut Sprite Sheet_44
+  - first:
+      213: 4429373090199295024
+    second: Astronaut Sprite Sheet_45
+  - first:
+      213: -4981180658567254916
+    second: Astronaut Sprite Sheet_46
+  - first:
+      213: -2953907165434245206
+    second: Astronaut Sprite Sheet_47
+  - first:
+      213: -7517469577118059417
+    second: Astronaut Sprite Sheet_48
+  - first:
+      213: -418314081707896696
+    second: Astronaut Sprite Sheet_49
+  - first:
+      213: -6194277251785333301
+    second: Astronaut Sprite Sheet_50
+  - first:
+      213: 7422346331524579317
+    second: Astronaut Sprite Sheet_51
+  - first:
+      213: -5555001761443897930
+    second: Astronaut Sprite Sheet_52
+  - first:
+      213: -2784492082278711102
+    second: Astronaut Sprite Sheet_53
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Astronaut Idle
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 1244
+        width: 90
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9abd6b8821d8e88e0800000000000000
+      internalID: -1689257699474744407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Astronaut Walk_01
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 1246
+        width: 87
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 562b07ea00f5013f0800000000000000
+      internalID: -932140666334432667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Astronaut Walk_02
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 1244
+        width: 95
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3e86e4f80f628a30800000000000000
+      internalID: 4216054285431377468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Astronaut Walk_03
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 1244
+        width: 95
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: def4bda7f59819eb0800000000000000
+      internalID: -4714836291704107027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Astronaut Walk_04
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 1245
+        width: 102
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47c0e727b681e4b60800000000000000
+      internalID: 7732144460003150964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Astronaut Walk_05
+      rect:
+        serializedVersion: 2
+        x: 887
+        y: 1244
+        width: 100
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1441dbaafa4c00a50800000000000000
+      internalID: 6485399722176353345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Astronaut Walk Out
+      rect:
+        serializedVersion: 2
+        x: 1048
+        y: 1243
+        width: 90
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50f7919f67585b7b0800000000000000
+      internalID: -5209110647952277755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Astronaut Crouch_01
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 903
+        width: 102
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c488e3a4e9f058ac0800000000000000
+      internalID: -3853656733620729780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Astronaut Crouch_02
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 897
+        width: 100
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afe97e83891123160800000000000000
+      internalID: 7003679716001947386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Astronaut Crouch_03
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 897
+        width: 103
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 068eb65d9d4fc2440800000000000000
+      internalID: 4912570509980067936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Astronaut Crouch
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 897
+        width: 102
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebcabb5c619592840800000000000000
+      internalID: 5199785199117511870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Astronaut Crouch Out
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 897
+        width: 100
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eed8dbdd971edd890800000000000000
+      internalID: -7431535896563970578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Astronaut Jetpack Idle
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 706
+        width: 117
+        height: 173
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5ad4a0a0e110e790800000000000000
+      internalID: -7502977322733741475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Astronaut Jetpack In
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 706
+        width: 115
+        height: 174
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b916455bdcb0dfef0800000000000000
+      internalID: -72889040829652581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Astronaut Jetpack_01
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 708
+        width: 115
+        height: 171
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e978c927cd8ed6d30800000000000000
+      internalID: 4426450042288375710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Astronaut Jetpack_02
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 708
+        width: 115
+        height: 173
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 145b4e37ef33c86b0800000000000000
+      internalID: -5292798294108097215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Astronaut Jetpack_03
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 708
+        width: 107
+        height: 173
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46dbee3103299f5a0800000000000000
+      internalID: -6486993053059990172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Astronaut Jetpack Land
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 708
+        width: 110
+        height: 176
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30d3972f2a04ca5f0800000000000000
+      internalID: -744148769826063101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Astronaut Jetpack Out
+      rect:
+        serializedVersion: 2
+        x: 1031
+        y: 706
+        width: 105
+        height: 175
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f352dd8a8f0894ba0800000000000000
+      internalID: -6104206014450686657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Astronaut Broken Idle
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 517
+        width: 138
+        height: 171
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ed43a9c72c212040800000000000000
+      internalID: 4621023242057108968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Astronaut Broken In
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 517
+        width: 134
+        height: 171
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7c6ade24b797f0f0800000000000000
+      internalID: -1083230385223340934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Astronaut Broken_01
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 519
+        width: 121
+        height: 169
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8de3f398367b66ab0800000000000000
+      internalID: -5015119496898199848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Astronaut Broken_02
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 522
+        width: 119
+        height: 166
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4a141db4ba415f80800000000000000
+      internalID: -8119626513045513653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Astronaut Broken_03
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 517
+        width: 131
+        height: 171
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cda3168084d1e6b40800000000000000
+      internalID: 5435313995498207964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Astonaut Inverting Idle
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 338
+        width: 133
+        height: 169
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5e02bcd8c8d95cb0800000000000000
+      internalID: -4874626764444135845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Astronaut Inverting Inverted_02
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 341
+        width: 117
+        height: 168
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38cacf67240b66b30800000000000000
+      internalID: 4280302295372835971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Astronaut Inverting Inverted_03
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 341
+        width: 112
+        height: 168
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a004ac19a1a883bb0800000000000000
+      internalID: -4956059543201497078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Astronaut Inverting Out
+      rect:
+        serializedVersion: 2
+        x: 973
+        y: 333
+        width: 139
+        height: 171
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4fff4ead283b91a0800000000000000
+      internalID: -6801781043363840182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Astronaut Jump_03
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 164
+        width: 90
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0c76e0d73b342dd0800000000000000
+      internalID: -2511817581251888118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Astronaut Wall Slide_01
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 140
+        width: 95
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 250042e814cb011c0800000000000000
+      internalID: -4534917835018469294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Astronaut Wall Slide_02
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 142
+        width: 106
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2995c720bbbf174b0800000000000000
+      internalID: -5444293693895059054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Astronaut Wall Jump_02
+      rect:
+        serializedVersion: 2
+        x: 977
+        y: 126
+        width: 108
+        height: 170
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f65eaceec543fbd0800000000000000
+      internalID: -2597655805026216207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Astronaut Jump_01
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 145
+        width: 98
+        height: 131
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6e9dc76b880bad20800000000000000
+      internalID: 3290733347559284333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Astronaut Jump_02
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 145
+        width: 97
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a1cf61ca61fdff00800000000000000
+      internalID: 1152342520490869157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Astronaut Wall Slide_03
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 140
+        width: 100
+        height: 163
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7c6d0c159a4fdab0800000000000000
+      internalID: -4981180658567254916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Astronaut Wall Jump_01
+      rect:
+        serializedVersion: 2
+        x: 867
+        y: 142
+        width: 93
+        height: 159
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aaf8fc0651d9107d0800000000000000
+      internalID: -2953907165434245206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Astronaut Wall Jump_03
+      rect:
+        serializedVersion: 2
+        x: 1090
+        y: 150
+        width: 117
+        height: 139
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7647216bf359ca790800000000000000
+      internalID: -7517469577118059417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Astonaut Gravistar
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 3
+        width: 124
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 880d14b1f89d13af0800000000000000
+      internalID: -418314081707896696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Astronaut Supermassive Gravistar
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 3
+        width: 119
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc56d0f78a1890aa0800000000000000
+      internalID: -6194277251785333301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Astronaut Inverting Inverted In
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 333
+        width: 156
+        height: 187
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd4e42312d8b1de41a8d1488df7be154
+      internalID: 1014862859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Astronatut Inverting Inverted_01
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 330
+        width: 134
+        height: 187
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a2d2b7f023a4934cbad894bc4ae8bb8
+      internalID: 413830798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5a8face396c667d49b9402119adf5d91
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Astonaut Gravistar: -418314081707896696
+      Astonaut Inverting Idle: -4874626764444135845
+      Astronatut Inverting Inverted_01: 413830798
+      Astronaut Broken Idle: 4621023242057108968
+      Astronaut Broken In: -1083230385223340934
+      Astronaut Broken_01: -5015119496898199848
+      Astronaut Broken_02: -8119626513045513653
+      Astronaut Broken_03: 5435313995498207964
+      Astronaut Crouch: 5199785199117511870
+      Astronaut Crouch Out: -7431535896563970578
+      Astronaut Crouch_01: -3853656733620729780
+      Astronaut Crouch_02: 7003679716001947386
+      Astronaut Crouch_03: 4912570509980067936
+      Astronaut Idle: -1689257699474744407
+      Astronaut Inverting Inverted In: 1014862859
+      Astronaut Inverting Inverted_02: 4280302295372835971
+      Astronaut Inverting Inverted_03: -4956059543201497078
+      Astronaut Inverting Out: -6801781043363840182
+      Astronaut Inverting_01: 3497814012987586123
+      Astronaut Inverting_02: -3963207870598561262
+      Astronaut Jetpack Idle: -7502977322733741475
+      Astronaut Jetpack In: -72889040829652581
+      Astronaut Jetpack Land: -744148769826063101
+      Astronaut Jetpack Out: -6104206014450686657
+      Astronaut Jetpack_01: 4426450042288375710
+      Astronaut Jetpack_02: -5292798294108097215
+      Astronaut Jetpack_03: -6486993053059990172
+      Astronaut Jump_01: 3290733347559284333
+      Astronaut Jump_02: 1152342520490869157
+      Astronaut Jump_03: -2511817581251888118
+      Astronaut Sprite Sheet_30: 1146195139212240336
+      Astronaut Sprite Sheet_31: -8106967145453947914
+      Astronaut Sprite Sheet_32: -953588829704498514
+      Astronaut Sprite Sheet_33: 3250614155362549234
+      Astronaut Sprite Sheet_37: -1822784310135517186
+      Astronaut Sprite Sheet_38: 8868273242976871102
+      Astronaut Sprite Sheet_39: 4964505481152845293
+      Astronaut Sprite Sheet_40: 8364720536867007149
+      Astronaut Sprite Sheet_42: 5539695685533654100
+      Astronaut Sprite Sheet_45: 4429373090199295024
+      Astronaut Sprite Sheet_51: 7422346331524579317
+      Astronaut Sprite Sheet_52: -5555001761443897930
+      Astronaut Sprite Sheet_53: -2784492082278711102
+      Astronaut Supermassive Gravistar: -6194277251785333301
+      Astronaut Walk Out: -5209110647952277755
+      Astronaut Walk_01: -932140666334432667
+      Astronaut Walk_02: 4216054285431377468
+      Astronaut Walk_03: -4714836291704107027
+      Astronaut Walk_04: 7732144460003150964
+      Astronaut Walk_05: 6485399722176353345
+      Astronaut Wall Jump_01: -2953907165434245206
+      Astronaut Wall Jump_02: -2597655805026216207
+      Astronaut Wall Jump_03: -7517469577118059417
+      Astronaut Wall Slide_01: -4534917835018469294
+      Astronaut Wall Slide_02: -5444293693895059054
+      Astronaut Wall Slide_03: -4981180658567254916
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

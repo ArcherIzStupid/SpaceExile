@@ -1,0 +1,290 @@
+fileFormatVersion: 2
+guid: f4b4decf468ffc9469474480c517602f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5235428786202493273
+    second: Speed Portals_0
+  - first:
+      213: -5192297343962556798
+    second: Speed Portals_1
+  - first:
+      213: -3636624195805988161
+    second: Speed Portals_2
+  - first:
+      213: -2401513837947423808
+    second: Speed Portals_3
+  - first:
+      213: 5517885484358691828
+    second: Speed Portals_4
+  - first:
+      213: 342404946212352550
+    second: Speed Portals_5
+  - first:
+      213: 1253910855923701136
+    second: Speed Portals_6
+  - first:
+      213: 4893723161158882135
+    second: Speed Portals_7
+  - first:
+      213: 960710347662631281
+    second: Speed Portals_8
+  - first:
+      213: -9007953958497038276
+    second: Speed Portals_9
+  - first:
+      213: -7522549500829740292
+    second: Speed Portals_10
+  - first:
+      213: 7381856827550019024
+    second: Speed Portals_11
+  - first:
+      213: 5667779857739109197
+    second: Speed Portals_12
+  - first:
+      213: -6424337413039489024
+    second: Speed Portals_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Half Speed
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 235
+        width: 341
+        height: 590
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7aebb87e1450857b0800000000000000
+      internalID: -5235428786202493273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Normal Speed
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 235
+        width: 324
+        height: 592
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bb4ff84696330c478491807f398ca5a
+      internalID: 1063581564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Twice Speed
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 228
+        width: 339
+        height: 604
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2c84823a40eea046b268ef1102efc11
+      internalID: 919299047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thrice Speed
+      rect:
+        serializedVersion: 2
+        x: 1144
+        y: 238
+        width: 360
+        height: 594
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50a7154aabc1aad47b22cddd785ce938
+      internalID: -1358798609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 376c9b09596c89842b815f7adfee0758
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Half Speed: -5235428786202493273
+      Normal Speed: 1063581564
+      Speed Portals_1: -5192297343962556798
+      Speed Portals_10: -7522549500829740292
+      Speed Portals_11: 7381856827550019024
+      Speed Portals_12: 5667779857739109197
+      Speed Portals_13: -6424337413039489024
+      Speed Portals_2: -3636624195805988161
+      Speed Portals_3: -2401513837947423808
+      Speed Portals_4: 5517885484358691828
+      Speed Portals_5: 342404946212352550
+      Speed Portals_6: 1253910855923701136
+      Speed Portals_7: 4893723161158882135
+      Speed Portals_8: 960710347662631281
+      Speed Portals_9: -9007953958497038276
+      Thrice Speed: -1358798609
+      Twice Speed: 919299047
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

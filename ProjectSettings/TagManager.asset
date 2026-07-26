@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 3
+  tags:
+  - Level_Exit
+  - Music
+  - Ground
+  - ^
+  - Down
+  - Normal
+  - Jetpack
+  - Broken Jetpack
+  - Inverting Jetpack
+  - Gravastar
+  - Supermassive Gravastar
+  - TrackingObject
+  - Actors
+  - Level_Bounds
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Ground
+  - Mode Switcher
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - Player
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: 
+    uniqueID: 787701271
+    locked: 0
+  - name: 
+    uniqueID: 1690135215
+    locked: 0
+  - name: 
+    uniqueID: 2513376029
+    locked: 0
+  - name: Ground
+    uniqueID: 1231638937
+    locked: 0
+  - name: Player
+    uniqueID: 414169231
+    locked: 0
+  m_RenderingLayers:
+  - Default

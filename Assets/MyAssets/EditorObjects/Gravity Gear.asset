@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: Gravity Gear
+  m_EditorClassIdentifier: Assembly-CSharp::EditorObject
+  objectName: Gravity Gear
+  icon: {fileID: 1555836969, guid: fc46aae857dafbe4dbf4ac041e3e869f, type: 3}
+  prefab: {fileID: 7928719111782894167, guid: fb633433e1822744e98af6562db9a071, type: 3}
+  tab: 3

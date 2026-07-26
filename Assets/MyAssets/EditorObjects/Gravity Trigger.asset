@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: Gravity Trigger
+  m_EditorClassIdentifier: Assembly-CSharp::EditorObject
+  objectName: Gravity Trigger
+  icon: {fileID: 1442980096369935925, guid: 143cffc9ad0f9b54f8cc4b4080e49d4c, type: 3}
+  prefab: {fileID: 2683111476602691091, guid: d2e6466d70d92c2429f76c166221c43e, type: 3}
+  tab: 4
