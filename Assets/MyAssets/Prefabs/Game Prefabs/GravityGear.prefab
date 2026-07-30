@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6143183057630769001}
   - component: {fileID: 1317542500176622774}
   - component: {fileID: 7270305375183948342}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GravityGear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,8 +80,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1781591267
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 1555836969, guid: fc46aae857dafbe4dbf4ac041e3e869f, type: 3}
@@ -170,26 +170,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EditableObject
   editorObject: {fileID: 11400000, guid: 42c4d9b39a974704fbd33461d5d7639e, type: 2}
-  jumpStrength: 1
-  gravityStrength: 0
-  teleportDistance: 0
-  damage: 0
-  triggerDelay: 0
-  collectibleAmount: 0
-  playerMode: 0
-  playerSize: 0
-  playerSpeed: 0
-  gearType: 1
-  gravityType: 0
-  triggerActivateType: 0
-  moveSpeed: 0
-  endPositionX: 0
-  endPositionY: 0
-  endRotation: 0
-  endWidth: 0
-  endHeight: 0
-  endScale: 1
-  spriteRenderer: {fileID: 3322775942209475003}
-  boxCollider: {fileID: 6143183057630769001}
-  EndGravityVector: 0
-  gravityDirection: {x: 0, y: 0}

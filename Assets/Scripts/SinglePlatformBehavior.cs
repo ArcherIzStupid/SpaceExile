@@ -2,10 +2,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(BoxCollider2D))]
-public class SinglePlatformBehavior :
-    MonoBehaviour,
-    IEditableComponent,
-    IEditableGizmo
+public class SinglePlatformBehavior : MonoBehaviour, IEditableComponent, IEditableGizmo, IEditorToolCapabilities
 {
     private SpriteRenderer spriteRenderer;
     private BoxCollider2D boxCollider;
@@ -68,7 +65,20 @@ public class SinglePlatformBehavior :
     public void BuildGizmos(
         EditorGizmoManager manager)
     {
-        manager.AddMoveHandle(transform);
+        switch (manager.CurrentTool)
+        {
+            case EditorTool.Move:
+                manager.AddMoveHandle(transform);
+                break;
+    
+            case EditorTool.Rotate:
+                // manager.AddRotateHandle(transform);
+                break;
+    
+            case EditorTool.Scale:
+                // manager.AddScaleHandle(this);
+                break;
+        }
     }
 
     #endregion
@@ -97,5 +107,19 @@ public class SinglePlatformBehavior :
             new Vector2(
                 boxCollider.size.x,
                 height);
+    }
+
+    public bool CanUseTool(EditorTool tool)
+    {
+        switch (tool)
+        {
+            case EditorTool.Move:
+            case EditorTool.Rotate:
+            case EditorTool.Scale:
+                return true;
+
+            default:
+                return false;
+        }
     }
 }

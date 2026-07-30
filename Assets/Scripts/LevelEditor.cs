@@ -27,6 +27,8 @@ public class LevelEditor : MonoBehaviour
 
     public float cameraSpeed = 10f;
 
+    [SerializeField] EditorToolBar toolBar;
+
     [Header("Navigation")]
 
     public float zoomSpeed = 50f;
@@ -257,6 +259,16 @@ public class LevelEditor : MonoBehaviour
 
         Vector2 mousePos = editorCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
 
+        EditorGizmoManager gizmos =
+            EditorGizmoManager.instance;
+
+        if (gizmos != null &&
+            (gizmos.IsInteracting ||
+             gizmos.IsPointerOverAnyHandle(mousePos)))
+        {
+            return;
+        }
+
         Collider2D hit = Physics2D.OverlapPoint(mousePos);
 
         if(hit == null)
@@ -272,6 +284,8 @@ public class LevelEditor : MonoBehaviour
         
         infoPanel.ShowObject(editable);
 
+        toolBar.SetSelectedObject(editable);
+
         Debug.Log("Calling ShowGizmos");
         
         EditorGizmoManager.instance
@@ -280,6 +294,9 @@ public class LevelEditor : MonoBehaviour
 
     public void HandleCameraPan()
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+            return;
+
         if (Mouse.current.middleButton.wasPressedThisFrame)
         {
             lastMousePosition =
@@ -312,6 +329,9 @@ public class LevelEditor : MonoBehaviour
 
     public void HandleCameraZoom()
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+            return;
+
         float scroll =
             Mouse.current.scroll.ReadValue().y;
 

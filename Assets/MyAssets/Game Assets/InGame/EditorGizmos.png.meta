@@ -20,27 +20,6 @@ TextureImporter:
   - first:
       213: -4578333725852513086
     second: EditorGizmos_5
-  - first:
-      213: 5393490363844624114
-    second: EditorGizmos_6
-  - first:
-      213: 466177294795231775
-    second: EditorGizmos_7
-  - first:
-      213: 7452015445738934257
-    second: EditorGizmos_8
-  - first:
-      213: -4719361167422051567
-    second: EditorGizmos_9
-  - first:
-      213: 3520021396382726315
-    second: EditorGizmos_10
-  - first:
-      213: -8158863125003471259
-    second: EditorGizmos_11
-  - first:
-      213: 5908916436040211794
-    second: EditorGizmos_12
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -162,287 +141,133 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MoveGizmo
+      name: Move Gizmo
       rect:
         serializedVersion: 2
-        x: 45
-        y: 744
-        width: 249
-        height: 209
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 0
+        y: 512
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5381444, y: 0.40887725}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: b09322503b8e50cf0800000000000000
-      internalID: -286567145685239541
+      spriteID: 3ef6ac51519402747aada726230a0e09
+      internalID: -376136952
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RotateGizmo
+      name: Rotate Gizmo
       rect:
         serializedVersion: 2
-        x: 316
-        y: 749
-        width: 211
-        height: 196
+        x: 512
+        y: 512
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f71cd57610a74e3a0800000000000000
-      internalID: -6637045804389514881
+      spriteID: 51ff6896389285a4b804440efc9bdc2c
+      internalID: 658401287
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WidthGizmo
+      name: Scale Gizmo
       rect:
         serializedVersion: 2
-        x: 543
-        y: 831
-        width: 218
-        height: 74
+        x: 1024
+        y: 512
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e21cdb34832083220800000000000000
-      internalID: 2465723236663279918
+      spriteID: 074133787d78fcc4986ebbc1761e5aa0
+      internalID: -2026476000
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HeightGizmo
+      name: Direction Gizmo
       rect:
         serializedVersion: 2
-        x: 807
-        y: 774
-        width: 130
-        height: 175
+        x: 0
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 3e73be4bb3c2cae40800000000000000
-      internalID: 5668954665902618595
+      spriteID: 64c876ff722f83944a42e24a345cf289
+      internalID: -1232615138
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DirectionGizmo
+      name: Camera Gizmo
       rect:
         serializedVersion: 2
-        x: 87
-        y: 523
-        width: 215
-        height: 172
+        x: 512
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 659e38fac3e1051c0800000000000000
+      spriteID: b90d11a53736df74599a9ed21e4f7817
       internalID: -4517077180261078698
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TargetPosGizmo
+      name: EndPos Gizmo
       rect:
         serializedVersion: 2
-        x: 338
-        y: 496
-        width: 196
-        height: 201
+        x: 1024
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 2ccce5fbbbd7670c0800000000000000
-      internalID: -4578333725852513086
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RadiusGizmo
-      rect:
-        serializedVersion: 2
-        x: 561
-        y: 523
-        width: 181
-        height: 182
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2fe7374f8e689da40800000000000000
-      internalID: 5393490363844624114
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ScaleGizmo
-      rect:
-        serializedVersion: 2
-        x: 791
-        y: 550
-        width: 215
-        height: 131
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f125f9a97c1387600800000000000000
-      internalID: 466177294795231775
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: OffsetGizmo
-      rect:
-        serializedVersion: 2
-        x: 17
-        y: 295
-        width: 253
-        height: 157
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1ff4effb090ea6760800000000000000
-      internalID: 7452015445738934257
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CameraGizmo
-      rect:
-        serializedVersion: 2
-        x: 367
-        y: 312
-        width: 170
-        height: 113
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 11b2901c506718eb0800000000000000
-      internalID: -4719361167422051567
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WaveGizmo
-      rect:
-        serializedVersion: 2
-        x: 575
-        y: 200
-        width: 197
-        height: 229
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ba8ba256fc0a9d030800000000000000
-      internalID: 3520021396382726315
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WarningGizmo
-      rect:
-        serializedVersion: 2
-        x: 127
-        y: 88
-        width: 183
-        height: 161
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 566722f1735e5ce80800000000000000
-      internalID: -8158863125003471259
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LockGizmo
-      rect:
-        serializedVersion: 2
-        x: 415
-        y: 103
-        width: 138
-        height: 139
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 25dd4a91130b00250800000000000000
-      internalID: 5908916436040211794
+      spriteID: 8447b1987c9469945900e1d3554f34f0
+      internalID: -696006666
       vertices: []
       indices: 
       edges: []
@@ -451,7 +276,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 17339e0b5626fdb4a842c823344a060b
+    spriteID: fde7cc87c1da7ee4a86c404bd8ba513d
     internalID: 0
     vertices: []
     indices: 
@@ -459,21 +284,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":2.0},"gridSpriteSize":{"x":512.0,"y":512.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      CameraGizmo: -4719361167422051567
-      DirectionGizmo: -4517077180261078698
-      HeightGizmo: 5668954665902618595
-      LockGizmo: 5908916436040211794
-      MoveGizmo: -286567145685239541
-      OffsetGizmo: 7452015445738934257
-      RadiusGizmo: 5393490363844624114
-      RotateGizmo: -6637045804389514881
-      ScaleGizmo: 466177294795231775
-      TargetPosGizmo: -4578333725852513086
-      WarningGizmo: -8158863125003471259
-      WaveGizmo: 3520021396382726315
-      WidthGizmo: 2465723236663279918
+      Camera Gizmo: -4517077180261078698
+      Direction Gizmo: -1232615138
+      EndPos Gizmo: -1174022244
+      Move Gizmo: -376136952
+      Rotate Gizmo: 658401287
+      Scale Gizmo: -2026476000
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

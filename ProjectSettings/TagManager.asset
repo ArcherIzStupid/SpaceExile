@@ -29,7 +29,7 @@ TagManager:
   - Mode Switcher
   - 
   - 
-  - 
+  - Editor Object
   - 
   - 
   - 
@@ -61,10 +61,10 @@ TagManager:
   - name: 
     uniqueID: 1690135215
     locked: 0
-  - name: 
+  - name: Ground
     uniqueID: 2513376029
     locked: 0
-  - name: Ground
+  - name: Editor Objects
     uniqueID: 1231638937
     locked: 0
   - name: Player
