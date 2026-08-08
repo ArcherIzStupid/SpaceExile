@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 922003738972432137}
   - component: {fileID: 3885324697595389417}
   - component: {fileID: 1136352294237206086}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: GravityTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}

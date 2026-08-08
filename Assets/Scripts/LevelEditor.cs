@@ -285,11 +285,6 @@ public class LevelEditor : MonoBehaviour
         infoPanel.ShowObject(editable);
 
         toolBar.SetSelectedObject(editable);
-
-        Debug.Log("Calling ShowGizmos");
-        
-        EditorGizmoManager.instance
-            .ShowGizmos(editable);
     }
 
     public void HandleCameraPan()

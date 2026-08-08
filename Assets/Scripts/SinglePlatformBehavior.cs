@@ -18,7 +18,7 @@ public class SinglePlatformBehavior : MonoBehaviour, IEditableComponent, IEditab
     public void BuildEditor(ObjectInfoPanel panel)
     {
         panel.AddFloat(
-            "Position X",
+            "X Position",
             transform.position.x,
             value =>
             {
@@ -29,7 +29,7 @@ public class SinglePlatformBehavior : MonoBehaviour, IEditableComponent, IEditab
             });
 
         panel.AddFloat(
-            "Position Y",
+            "Y Position",
             transform.position.y,
             value =>
             {

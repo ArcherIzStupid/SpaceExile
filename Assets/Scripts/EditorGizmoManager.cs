@@ -37,7 +37,7 @@ public class EditorGizmoManager : MonoBehaviour
         private EditableObject selectedObject;
 
         public EditorTool CurrentTool { get; private set; }
-            = EditorTool.Move;
+            = EditorTool.None;
 
     private void Awake()
     {
@@ -207,55 +207,67 @@ public class EditorGizmoManager : MonoBehaviour
             world.y);
     }
 
-    public void SetSelectedObject(
-        EditableObject editable)
+    public void SetSelectedObject(EditableObject editable)
     {
         selectedObject = editable;
+
+        // Do not automatically choose a tool.
+        CurrentTool = EditorTool.None;
+
         RebuildCurrentGizmo();
     }
 
     public void SetTool(EditorTool tool)
     {
+        if (selectedObject == null)
+            return;
+
         CurrentTool = tool;
+
         RebuildCurrentGizmo();
+    }
+
+    public void ClearSelectedObject()
+    {
+        selectedObject = null;
+        CurrentTool = EditorTool.None;
+
+        Clear();
     }
 
     private void RebuildCurrentGizmo()
     {
         Clear();
     
-        if (selectedObject == null ||
-            CurrentTool == EditorTool.None)
-        {
+        if (selectedObject == null)
             return;
-        }
     
-        IEditorToolCapabilities[] capabilities =
-            selectedObject
-                .GetComponents<IEditorToolCapabilities>();
+        if (CurrentTool == EditorTool.None)
+            return;
     
-        bool allowed = false;
-    
-        foreach (IEditorToolCapabilities capability
-                 in capabilities)
-        {
-            if (capability.CanUseTool(CurrentTool))
-            {
-                allowed = true;
-                break;
-            }
-        }
-    
-        if (!allowed)
+        if (!CanSelectedObjectUseTool(CurrentTool))
             return;
     
         IEditableGizmo[] gizmoComponents =
             selectedObject.GetComponents<IEditableGizmo>();
     
-        foreach (IEditableGizmo gizmo
-                 in gizmoComponents)
+        foreach (IEditableGizmo gizmo in gizmoComponents)
         {
             gizmo.BuildGizmos(this);
         }
+    }
+    
+    private bool CanSelectedObjectUseTool(EditorTool tool)
+    {
+        IEditorToolCapabilities[] capabilities =
+            selectedObject.GetComponents<IEditorToolCapabilities>();
+    
+        foreach (IEditorToolCapabilities capability in capabilities)
+        {
+            if (capability.CanUseTool(tool))
+                return true;
+        }
+    
+        return false;
     }
 }

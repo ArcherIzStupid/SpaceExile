@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Gravity Gear
   m_EditorClassIdentifier: Assembly-CSharp::EditorObject
   objectName: Gravity Gear
-  icon: {fileID: 1555836969, guid: fc46aae857dafbe4dbf4ac041e3e869f, type: 3}
+  icon: {fileID: -743690604446648561, guid: a598524724b4f71439ac74df67c6bdd3, type: 3}
   prefab: {fileID: 7928719111782894167, guid: fb633433e1822744e98af6562db9a071, type: 3}
   tab: 3

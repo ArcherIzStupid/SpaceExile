@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering.HighDefinition;
 
 public class GravityTriggerBehavior : TriggerBehavior, IEditableComponent, IEditableGizmo
 {
@@ -9,11 +10,16 @@ public class GravityTriggerBehavior : TriggerBehavior, IEditableComponent, IEdit
     [Range(0,360)]
     public float gravityAngle;
 
-    public bool rotateVelocity;
+    public PlayerController player;
+    public bool invertControls = false;
+
+    void Start()
+    {
+        player = GetComponent<PlayerController>();
+    }
 
     public override void Execute(GameObject activator)
     {
-        Debug.Log("Trigger Activated");
         PlayerController player =
             activator.GetComponent<PlayerController>();
 
@@ -21,7 +27,7 @@ public class GravityTriggerBehavior : TriggerBehavior, IEditableComponent, IEdit
             return;
 
         float radians =
-            gravityAngle * Mathf.Deg2Rad;
+            gravityAngle * Mathf.Deg2Rad + 90;
 
         Vector2 direction =
             new Vector2(
@@ -30,11 +36,6 @@ public class GravityTriggerBehavior : TriggerBehavior, IEditableComponent, IEdit
             ).normalized;
 
         player.SetGravity(direction);
-
-        if (rotateVelocity)
-        {
-            //player.RotateVelocity(direction);
-        }
     }
 
     public void BuildEditor(ObjectInfoPanel panel)
@@ -58,9 +59,9 @@ public class GravityTriggerBehavior : TriggerBehavior, IEditableComponent, IEdit
         );
 
         panel.AddBool().Setup(
-            "Rotate Velocity",
-            rotateVelocity,
-            value => rotateVelocity = value
+            "Invert Controls",
+            invertControls,
+            value => invertControls = value
         );
     }
 

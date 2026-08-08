@@ -4,6 +4,9 @@ using IngameDebugConsole;
 using CitrioN.Common;
 using System;
 using UnityEngine.Animations;
+using System.Collections.Generic;
+using Unity.VisualScripting;
+using System.Collections;
 
 public enum PlayerMode
 {
@@ -33,7 +36,9 @@ public enum GearType
     Jump,
     Gravity,
     DropGravity,
-    Drop
+    Drop,
+    Trigger,
+    Dash
 }
 
 public enum GravityDirectionType
@@ -100,7 +105,7 @@ public class PlayerController : MonoBehaviour
     [Header("Movement")]
 
     public float moveSpeed = 5f;
-    public static float jumpForce = 10f;
+    [SerializeField] public float jumpForce = 10f;
 
     [SerializeField] private float acceleration = 2.5f;
     [SerializeField] private float deceleration = 5f;
@@ -108,6 +113,16 @@ public class PlayerController : MonoBehaviour
     public float rotationSpeedG = 500f;
 
     Quaternion targetRotation;
+
+    [Header("Jetpack")]
+    [SerializeField] private float jetpackForce = 30f;
+    [SerializeField] private float jetpackMaximumSpeed = 14f;
+
+    [Header("Gravity Rotation")]
+    [SerializeField] private float gravityRotationSpeed = 500f;
+    [SerializeField] private bool rotatePlayerWithGravity = true;
+
+    private float targetGravityAngle;
 
     //==================================================
     // WALL MOVEMENT
@@ -129,7 +144,14 @@ public class PlayerController : MonoBehaviour
     public LayerMask ground;
 
     public float checkRadius = 0.5f;
-    public float groundCheckDistance = 1f;
+    [SerializeField] private float groundCheckDistance = 1f;
+    [SerializeField] private float wallCheckDistance = 0.65f;
+
+    [Header("Control Direction")]
+    [SerializeField] private bool invertControlsOnStart = false;
+
+    [Tooltip("Manually reverses the final A/D controls.")]
+    [SerializeField] public bool invertControls;
 
     //==================================================
     // CROUCH
@@ -174,6 +196,7 @@ public class PlayerController : MonoBehaviour
     public float rollTorque = 15f;
     public float maxRollSpeed = 8f;
     public float rotationSpeed = 45;
+    [SerializeField] private float gravastarMoveForce = 25f;
 
     //==================================================
     // PRIVATE VARIABLES
@@ -195,6 +218,18 @@ public class PlayerController : MonoBehaviour
     [Header("Gear")]
 
     public static bool canGear;
+
+    //==================================================
+    // ANIMATIONS
+    //==================================================
+
+    [SerializeField] private int NormalModeLayer;
+    [SerializeField] private int JetpackModeLayer;
+    [SerializeField] private int BrokenModeLayer;
+    [SerializeField] private int InvertingModeLayer;
+    [SerializeField] private int GravastarModeLayer;
+    [SerializeField] private int SupermassiveGravastarModeLayer;
+
     //==================================================
     // UNITY METHODS
     //==================================================
@@ -206,55 +241,53 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         box = GetComponent<BoxCollider2D>();
         circle = GetComponent<CircleCollider2D>();
+
+        gravityDirection =
+            gravityDirection.normalized;
+
+        UpdatePlayerRotation();
+
+        rb.rotation = targetGravityAngle;
+        rb.freezeRotation = false;
+
+        invertControls = invertControlsOnStart;
+
+        NormalModeLayer = anim.GetLayerIndex("Normal Mode");
+        JetpackModeLayer = anim.GetLayerIndex("Jetpack Mode");
+        BrokenModeLayer = anim.GetLayerIndex("Broken Mode");
+        InvertingModeLayer = anim.GetLayerIndex("Inverting Mode");
+        GravastarModeLayer = anim.GetLayerIndex("Gravastar Mode");
+        SupermassiveGravastarModeLayer = anim.GetLayerIndex("Supermassive Gravastar Mode");
     }
 
     void Update()
     {
         GetInput();
 
-        CheckGround();
-
-        CheckWall();
-
         HandleModes();
-
-        HandleWallSlide();
-
         HandleSize();
-
-        HandleAnimations();
-
         HandleSpeed();
-
         HandleGears();
+        HandleAnimations();
+        HandleModeAnimations();
     }
 
     void FixedUpdate()
     {
+        CheckGround();
+        CheckWall();
+
         HandleMovement();
+        HandleWallSlide();
+        HandleJetpackPhysics();
 
         HandleSpriteDirection();
-
         HandleWallJumpTimer();
-
         HandleCrouch();
 
         ApplyGravity();
-    }
 
-    void LateUpdate()
-    {
-        transform.rotation =
-            Quaternion.RotateTowards(
-
-                transform.rotation,
-
-                targetRotation,
-
-                rotationSpeed *
-
-                Time.deltaTime
-            );
+        HandleGravityRotation();
     }
 
     //==================================================
@@ -263,12 +296,28 @@ public class PlayerController : MonoBehaviour
 
     void GetInput()
     {
+            float rawMoveInput = 0f;
+
+        if (Keyboard.current.aKey.isPressed)
+        {
+            rawMoveInput = -1f;
+        }
+        else if (Keyboard.current.dKey.isPressed)
+        {
+            rawMoveInput = 1f;
+        }
+
+        bool finalInversion =
+            IsGravityInInvertedControlRange() ^ invertControls;
+
         moveInput =
-            Keyboard.current.aKey.isPressed ? 1 :
-            Keyboard.current.dKey.isPressed ? -1 : 0;
+            finalInversion
+                ? -rawMoveInput
+                : rawMoveInput;
 
         jumpPressed =
             Keyboard.current.spaceKey.wasPressedThisFrame;
+
         jumpHeld =
             Keyboard.current.spaceKey.isPressed;
 
@@ -308,67 +357,57 @@ public class PlayerController : MonoBehaviour
     }
     void CheckWall()
     {
+        Vector2 playerPosition = transform.position;
+    
         Vector2 leftCheck =
-
-            (Vector2)transform.position
-
-            +
-
-            LeftDirection
-
-            * 0.6f;
-
+            playerPosition +
+            LeftDirection * wallCheckDistance;
+    
         Vector2 rightCheck =
-
-            (Vector2)transform.position
-
-            +
-
-            RightDirection
-
-            * 0.6f;
-
+            playerPosition +
+            RightDirection * wallCheckDistance;
+    
         bool leftWall =
-
             Physics2D.OverlapCircle(
-
                 leftCheck,
-
                 checkRadius,
-
-                ground
-            );
-
+                ground);
+    
         bool rightWall =
-
             Physics2D.OverlapCircle(
-
                 rightCheck,
-
                 checkRadius,
-
-                ground
-            );
-
-        isTouchingWall =
-
-            leftWall || rightWall;
-
-        if(leftWall)
+                ground);
+    
+        isTouchingWall = leftWall || rightWall;
+    
+        if (leftWall)
         {
-            wallDirection = 1;
+            // Jump toward the right.
+            wallDirection = 1f;
         }
-
-        else if(rightWall)
+        else if (rightWall)
         {
-            wallDirection = -1;
+            // Jump toward the left.
+            wallDirection = -1f;
         }
-
         else
         {
-            wallDirection = 0;
+            wallDirection = 0f;
         }
     }
+    bool IsGravityInInvertedControlRange()
+    {
+        float gravityAngle = Mathf.Atan2(gravityDirection.y, gravityDirection.x) * Mathf.Rad2Deg + 90;
+    
+        // Measures the shortest distance to 0 degrees. 
+        // Returns a value between -180 and 180.
+        //float relativeAngle = Mathf.DeltaAngle(0f, gravityAngle);
+    
+        // Checks if the angle is within 91 degrees of 0 in either direction
+        return Mathf.Abs(gravityAngle) >= 91f;
+    }
+
 
     //==================================================
     // MODES
@@ -426,54 +465,6 @@ public class PlayerController : MonoBehaviour
     {
         box.enabled = true;
         circle.enabled = false;
-        if (!jumpHeld)
-            return;
-
-        rb.AddForce(
-            UpDirection *
-            jumpForce *
-            0.5f,
-
-            ForceMode2D.Force
-        );
-
-        // Optional max vertical speed
-        float sideSpeed =
-
-            Vector2.Dot(
-            
-                rb.linearVelocity,
-
-                RightDirection
-            );
-
-        float gravitySpeed =
-
-            Mathf.Clamp(
-            
-                Vector2.Dot(
-                
-                    rb.linearVelocity,
-
-                    UpDirection
-                ),
-
-                -8f,
-
-                8f
-            );
-
-        rb.linearVelocity =
-
-            RightDirection
-
-            * sideSpeed
-
-            +
-
-            UpDirection
-
-            * gravitySpeed;
     }
 
     void HandleBrokenJetpackMode()
@@ -490,59 +481,20 @@ public class PlayerController : MonoBehaviour
     {
         box.enabled = true;
         circle.enabled = false;
-        // Continuous flying
-        if (jumpHeld)
-        {
-            rb.AddForce(
-                UpDirection *
-                jumpForce,
 
-                ForceMode2D.Force
-            );
-
-            float sideSpeed =
-
-                Vector2.Dot(
-                
-                    rb.linearVelocity,
-
-                    RightDirection
-                );
-
-            float gravitySpeed =
-
-                Mathf.Clamp(
-                
-                    Vector2.Dot(
-                    
-                        rb.linearVelocity,
-
-                        UpDirection
-                    ),
-
-                    -8f,
-
-                    8f
-                );
-
-            rb.linearVelocity =
-
-                RightDirection
-
-                * sideSpeed
-
-                +
-
-                UpDirection
-
-                * gravitySpeed;
-                
-        }
-
-        // Flip gravity ONLY once per press
         if (jumpPressed)
         {
             FlipGravity();
+
+            // Prevent the old velocity from fighting the newly
+            // inverted jetpack direction.
+            float sidewaysSpeed =
+                Vector2.Dot(
+                    rb.linearVelocity,
+                    RightDirection);
+
+            rb.linearVelocity =
+                RightDirection * sidewaysSpeed;
         }
     }
 
@@ -641,7 +593,7 @@ public class PlayerController : MonoBehaviour
     void HandleMovement()
     {
         if (mode == PlayerMode.Gravastar ||
-        mode == PlayerMode.SupermassiveGravastar)
+            mode == PlayerMode.SupermassiveGravastar)
         {
             HandleGravastarMovement();
             return;
@@ -649,79 +601,99 @@ public class PlayerController : MonoBehaviour
 
         if (isWallJumping || crouching)
             return;
+
+        bool isJetpackMode =
+            mode == PlayerMode.Jetpack ||
+            mode == PlayerMode.BrokenJetpack ||
+            mode == PlayerMode.InvertingJetpack;
+
+        // Jetpack types steer only while airborne.
+        // Normal mode can move both on the ground and in the air.
+        bool canMove =
+            !isJetpackMode || !isGrounded;
+
+        if (!canMove)
+            return;
+
         float targetSpeed =
             moveInput *
             moveSpeed *
             currentSpeed;
 
-        float currentVelocity =
+        float currentSidewaysSpeed =
             Vector2.Dot(
                 rb.linearVelocity,
+                RightDirection);
 
-                RightDirection
-            );
-        float speedDif =
+        float speedDifference =
             targetSpeed -
-            currentVelocity;
+            currentSidewaysSpeed;
 
-        float accelRate =
+        float accelerationRate =
             Mathf.Abs(targetSpeed) > 0.01f
-            ? acceleration
-            : deceleration;
+                ? acceleration
+                : deceleration;
 
-        float moveForce =
-            speedDif * accelRate;
+        rb.AddForce(
+            RightDirection *
+            speedDifference *
+            accelerationRate,
+            ForceMode2D.Force);
 
-        if(
-            mode == PlayerMode.Normal
-        
-            ||
-        
-            isGrounded
-        )
-        {
-            rb.AddForce(
-            
-                moveForce
-        
-                * RightDirection,
-        
-                ForceMode2D.Force
-            );
-        }
+        float maximumSpeed =
+            moveSpeed *
+            currentSpeed;
 
-        float horizontal =
+        float clampedSidewaysSpeed =
             Mathf.Clamp(
-            
                 Vector2.Dot(
                     rb.linearVelocity,
+                    RightDirection),
+                -maximumSpeed,
+                maximumSpeed);
 
-                    RightDirection
-                ),
-
-                -moveSpeed,
-
-                moveSpeed
-            );
-
-        float vertical =
+        float gravityAxisSpeed =
             Vector2.Dot(
                 rb.linearVelocity,
-
-                UpDirection
-            );
+                UpDirection);
 
         rb.linearVelocity =
+            RightDirection * clampedSidewaysSpeed +
+            UpDirection * gravityAxisSpeed;
+    }
 
-            RightDirection
+    void HandleJetpackPhysics()
+    {
+        bool usesContinuousJetpack =
+            mode == PlayerMode.Jetpack ||
+            mode == PlayerMode.InvertingJetpack;
 
-            * horizontal
+        if (!usesContinuousJetpack || !jumpHeld)
+            return;
 
-            +
+        rb.AddForce(
+            UpDirection * jetpackForce,
+            ForceMode2D.Force);
 
-            UpDirection
+        float sidewaysSpeed =
+            Vector2.Dot(
+                rb.linearVelocity,
+                RightDirection);
 
-            * vertical;
+        float upwardSpeed =
+            Vector2.Dot(
+                rb.linearVelocity,
+                UpDirection);
+
+        upwardSpeed =
+            Mathf.Clamp(
+                upwardSpeed,
+                -jetpackMaximumSpeed,
+                jetpackMaximumSpeed);
+
+        rb.linearVelocity =
+            RightDirection * sidewaysSpeed +
+            UpDirection * upwardSpeed;
     }
 
     void HandleGravastarMovement()
@@ -729,25 +701,38 @@ public class PlayerController : MonoBehaviour
         if (!isGrounded)
             return;
 
+        // Torque provides the rolling visual and physical rotation.
         rb.AddTorque(
-            -moveInput *
-            rollTorque,
-            ForceMode2D.Force
-        );
+            -moveInput * rollTorque,
+            ForceMode2D.Force);
 
-        rb.linearVelocity = new Vector2(
+        // Side force guarantees that the ball actually translates,
+        // even when contact friction is weak.
+        rb.AddForce(
+            RightDirection *
+            moveInput *
+            gravastarMoveForce,
+            ForceMode2D.Force);
+
+        float sidewaysSpeed =
+            Vector2.Dot(
+                rb.linearVelocity,
+                RightDirection);
+
+        sidewaysSpeed =
             Mathf.Clamp(
-                Vector2.Dot(
-
-                    rb.linearVelocity,
-
-                    RightDirection
-                ),
+                sidewaysSpeed,
                 -maxRollSpeed,
-                maxRollSpeed
-            ),
-            rb.linearVelocity.y
-        );
+                maxRollSpeed);
+
+        float gravityAxisSpeed =
+            Vector2.Dot(
+                rb.linearVelocity,
+                UpDirection);
+
+        rb.linearVelocity =
+            RightDirection * sidewaysSpeed +
+            UpDirection * gravityAxisSpeed;
     }
 
     void HandleGravastarRotation()
@@ -769,7 +754,7 @@ public class PlayerController : MonoBehaviour
         transform.Rotate(
             0f,
             0f,
-            -rotationAmount
+            rotationAmount
         );
     }
 
@@ -823,45 +808,42 @@ public class PlayerController : MonoBehaviour
 
     void HandleWallSlide()
     {
-        if (!isTouchingWall ||
+        bool modeAllowsWallSliding =
+            mode == PlayerMode.Normal ||
+            mode == PlayerMode.Jetpack ||
+            mode == PlayerMode.BrokenJetpack ||
+            mode == PlayerMode.InvertingJetpack;
+
+        if (!modeAllowsWallSliding ||
+            !isTouchingWall ||
             isGrounded ||
             isWallJumping)
         {
             isWallSliding = false;
-    
             return;
         }
-    
+
         isWallSliding = true;
-    
-        Vector2 horizontal =
-            Project(
+
+        float sidewaysSpeed =
+            Vector2.Dot(
                 rb.linearVelocity,
-    
-                RightDirection
-            );
-    
-        float gravitySpeed =
+                RightDirection);
+
+        float fallingSpeed =
+            Vector2.Dot(
+                rb.linearVelocity,
+                DownDirection);
+
+        // Positive means moving with gravity.
+        fallingSpeed =
             Mathf.Min(
-            
-                Vector2.Dot(
-                    rb.linearVelocity,
-    
-                    gravityDirection
-                ),
-    
-                wallSlideSpeed
-            );
-    
+                fallingSpeed,
+                wallSlideSpeed);
+
         rb.linearVelocity =
-    
-            horizontal
-    
-            +
-    
-            gravityDirection
-    
-            * gravitySpeed;
+            RightDirection * sidewaysSpeed +
+            DownDirection * fallingSpeed;
     }
 
     //==================================================
@@ -897,10 +879,8 @@ public class PlayerController : MonoBehaviour
         get
         {
             return new Vector2(
-                gravityDirection.y,
-
-                -gravityDirection.x
-            );
+                -gravityDirection.y,
+                gravityDirection.x);
         }
     }
 
@@ -942,27 +922,37 @@ public class PlayerController : MonoBehaviour
 
     void UpdatePlayerRotation()
     {
-        rb.freezeRotation = false;
-        float angle =
+        if (!IsFiniteVector(gravityDirection) ||
+            gravityDirection.sqrMagnitude < 0.0001f)
+        {
+            Debug.LogWarning(
+                $"Invalid gravity direction: {gravityDirection}. " +
+                "Resetting gravity to down.");
+
+            gravityDirection = Vector2.down;
+        }
+
+        gravityDirection.Normalize();
+
+        // Down  =   0°
+        // Right =  90°
+        // Up    = 180°
+        // Left  = -90°
+        targetGravityAngle =
             Mathf.Atan2(
-                gravityDirection.y,
+                gravityDirection.x,
+                -gravityDirection.y)
+            * Mathf.Rad2Deg;
 
-                gravityDirection.x
-            )
+        if (!float.IsFinite(targetGravityAngle))
+        {
+            Debug.LogError(
+                "Gravity rotation angle became invalid. " +
+                "Resetting to 0.");
 
-            * Mathf.Rad2Deg
-
-            + 90f;
-
-        transform.rotation =
-            Quaternion.Euler(
-                0,
-
-                0,
-
-                angle
-            );
-        rb.freezeRotation = true;
+            targetGravityAngle = 0f;
+            gravityDirection = Vector2.down;
+        }
     }
 
     public void SetGravity(Vector2 direction)
@@ -970,8 +960,7 @@ public class PlayerController : MonoBehaviour
         if (direction.sqrMagnitude < 0.0001f)
         {
             Debug.LogWarning(
-                "Invalid gravity direction."
-            );
+                "SetGravity received a zero direction.");
 
             return;
         }
@@ -980,8 +969,10 @@ public class PlayerController : MonoBehaviour
             direction.normalized;
 
         UpdatePlayerRotation();
-        
-        Debug.Log("Gravity: " + gravityDirection);
+
+        Debug.Log(
+            $"Gravity changed to {gravityDirection}. " +
+            $"Target angle: {targetGravityAngle}");
     }
 
     public Vector2 RotateVector(
@@ -1015,6 +1006,65 @@ public class PlayerController : MonoBehaviour
             input.y * Mathf.Cos(angle)
 
         );
+    }
+
+    void HandleGravityRotation()
+    {
+        if (!rotatePlayerWithGravity)
+            return;
+
+        if (mode == PlayerMode.Gravastar ||
+            mode == PlayerMode.SupermassiveGravastar)
+        {
+            return;
+        }
+
+        if (!float.IsFinite(targetGravityAngle))
+        {
+            Debug.LogError(
+                "Invalid target gravity angle detected.");
+
+            targetGravityAngle = 0f;
+            gravityDirection = Vector2.down;
+        }
+
+        rb.angularVelocity = 0f;
+
+        float nextAngle =
+            Mathf.MoveTowardsAngle(
+                rb.rotation,
+                targetGravityAngle,
+                gravityRotationSpeed *
+                Time.fixedDeltaTime);
+
+        rb.MoveRotation(nextAngle);
+    }
+
+    public bool IsFiniteVector(Vector2 v)
+    {
+        if(float.IsNaN(v.x) || float.IsNaN(v.y))
+        {
+            return false;
+        }
+        else if(float.IsInfinity(v.x) || float.IsInfinity(v.y))
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+
+    public float Vector2Angle(Vector2 input)
+    {
+        return Mathf.Atan2(input.y, input.x) * Mathf.Rad2Deg + 90;
+    }
+
+    public Vector2 Angle2Vector(float input)
+    {
+        Vector2 gravityDir = new Vector2(Mathf.Cos((input - 90f) * Mathf.Deg2Rad), Mathf.Sin((input - 90f) * Mathf.Deg2Rad));
+        return gravityDir;
     }
 
     //==================================================
@@ -1082,13 +1132,13 @@ public class PlayerController : MonoBehaviour
         if (isWallJumping)
             return;
 
-        if (moveInput > 0)
+        if (moveInput < 0f)
         {
-            spriteR.flipX = true;
+            spriteR.flipX = !invertControls;
         }
-        else if (moveInput < 0)
+        else if (moveInput > 0f)
         {
-            spriteR.flipX = false;
+            spriteR.flipX = invertControls;
         }
     }
 
@@ -1112,27 +1162,67 @@ public class PlayerController : MonoBehaviour
         
         anim.SetFloat("YSpeed", Vector2.Dot(rb.linearVelocity, UpDirection));
 
-        
-        switch(mode)
+        anim.SetBool("isFlying", jumpHeld && mode == PlayerMode.Jetpack || mode == PlayerMode.InvertingJetpack);
+        anim.SetBool("isGrounded", isGrounded);
+        anim.SetFloat("YSpeed", Vector2.Dot(rb.linearVelocity, UpDirection));
+        anim.SetInteger("Mode", (int)mode);
+    }
+
+    void HandleModeAnimations()
+    {
+        if(mode == PlayerMode.Normal)
         {
-            case PlayerMode.Normal:
-                PlayAnimation("Idle");
-                break;
-            case PlayerMode.Jetpack:
-                PlayAnimation("JetpackIdle");
-                break;
-            case PlayerMode.BrokenJetpack:
-                PlayAnimation("BrokenJetpackIdle");
-                break;
-            case PlayerMode.InvertingJetpack:
-                PlayAnimation("InvertingJetpackIdle");
-                break;
-            case PlayerMode.Gravastar:
-                PlayAnimation("Gravastar");
-                break;
-            case PlayerMode.SupermassiveGravastar:
-                PlayAnimation("SupermassiveGravastar");
-                break;
+            anim.SetLayerWeight(NormalModeLayer, Mathf.Lerp(anim.GetLayerWeight(NormalModeLayer), 1f, Time.deltaTime * 10f));
+            anim.SetLayerWeight(JetpackModeLayer, Mathf.Lerp(anim.GetLayerWeight(JetpackModeLayer), 0f, Time.deltaTime * 10f));
+            anim.SetLayerWeight(BrokenModeLayer, Mathf.Lerp(anim.GetLayerWeight(BrokenModeLayer), 0f, Time.deltaTime * 10f));
+            anim.SetLayerWeight(InvertingModeLayer, Mathf.Lerp(anim.GetLayerWeight(InvertingModeLayer), 0f, Time.deltaTime * 10f));
+            anim.SetLayerWeight(GravastarModeLayer, Mathf.Lerp(anim.GetLayerWeight(GravastarModeLayer), 0f, Time.deltaTime * 10f));
+            anim.SetLayerWeight(SupermassiveGravastarModeLayer, Mathf.Lerp(anim.GetLayerWeight(SupermassiveGravastarModeLayer), 0f, Time.deltaTime * 10f));
+        }
+        if(mode == PlayerMode.Jetpack)
+        {
+            anim.SetLayerWeight(NormalModeLayer, Mathf.Lerp(anim.GetLayerWeight(NormalModeLayer), 0f, Time.deltaTime * 10f));
+            anim.SetLayerWeight(JetpackModeLayer, Mathf.Lerp(anim.GetLayerWeight(JetpackModeLayer), 1f, Time.deltaTime * 10f));
+            anim.SetLayerWeight(BrokenModeLayer, Mathf.Lerp(anim.GetLayerWeight(BrokenModeLayer), 0f, Time.deltaTime * 10f));
+            anim.SetLayerWeight(InvertingModeLayer, Mathf.Lerp(anim.GetLayerWeight(InvertingModeLayer), 0f, Time.deltaTime * 10f));
+            anim.SetLayerWeight(GravastarModeLayer, Mathf.Lerp(anim.GetLayerWeight(GravastarModeLayer), 0f, Time.deltaTime * 10f));
+            anim.SetLayerWeight(SupermassiveGravastarModeLayer, Mathf.Lerp(anim.GetLayerWeight(SupermassiveGravastarModeLayer), 0f, Time.deltaTime * 10f));
+        }
+        if(mode == PlayerMode.BrokenJetpack)
+        {
+            anim.SetLayerWeight(NormalModeLayer, Mathf.Lerp(anim.GetLayerWeight(NormalModeLayer), 0f, Time.deltaTime * 10f));
+            anim.SetLayerWeight(JetpackModeLayer, Mathf.Lerp(anim.GetLayerWeight(JetpackModeLayer), 0f, Time.deltaTime * 10f));
+            anim.SetLayerWeight(BrokenModeLayer, Mathf.Lerp(anim.GetLayerWeight(BrokenModeLayer), 1f, Time.deltaTime * 10f));
+            anim.SetLayerWeight(InvertingModeLayer, Mathf.Lerp(anim.GetLayerWeight(InvertingModeLayer), 0f, Time.deltaTime * 10f));
+            anim.SetLayerWeight(GravastarModeLayer, Mathf.Lerp(anim.GetLayerWeight(GravastarModeLayer), 0f, Time.deltaTime * 10f));
+            anim.SetLayerWeight(SupermassiveGravastarModeLayer, Mathf.Lerp(anim.GetLayerWeight(SupermassiveGravastarModeLayer), 0f, Time.deltaTime * 10f));
+        }
+        if(mode == PlayerMode.InvertingJetpack)
+        {
+            anim.SetLayerWeight(NormalModeLayer, Mathf.Lerp(anim.GetLayerWeight(NormalModeLayer), 0f, Time.deltaTime * 10f));
+            anim.SetLayerWeight(JetpackModeLayer, Mathf.Lerp(anim.GetLayerWeight(JetpackModeLayer), 0f, Time.deltaTime * 10f));
+            anim.SetLayerWeight(BrokenModeLayer, Mathf.Lerp(anim.GetLayerWeight(BrokenModeLayer), 0f, Time.deltaTime * 10f));
+            anim.SetLayerWeight(InvertingModeLayer, Mathf.Lerp(anim.GetLayerWeight(InvertingModeLayer), 1f, Time.deltaTime * 10f));
+            anim.SetLayerWeight(GravastarModeLayer, Mathf.Lerp(anim.GetLayerWeight(GravastarModeLayer), 0f, Time.deltaTime * 10f));
+            anim.SetLayerWeight(SupermassiveGravastarModeLayer, Mathf.Lerp(anim.GetLayerWeight(SupermassiveGravastarModeLayer), 0f, Time.deltaTime * 10f));
+        }
+        if(mode == PlayerMode.Gravastar)
+        {
+            anim.SetLayerWeight(NormalModeLayer, Mathf.Lerp(anim.GetLayerWeight(NormalModeLayer), 0f, Time.deltaTime * 10f));
+            anim.SetLayerWeight(JetpackModeLayer, Mathf.Lerp(anim.GetLayerWeight(JetpackModeLayer), 0f, Time.deltaTime * 10f));
+            anim.SetLayerWeight(BrokenModeLayer, Mathf.Lerp(anim.GetLayerWeight(BrokenModeLayer), 0f, Time.deltaTime * 10f));
+            anim.SetLayerWeight(InvertingModeLayer, Mathf.Lerp(anim.GetLayerWeight(InvertingModeLayer), 0f, Time.deltaTime * 10f));
+            anim.SetLayerWeight(GravastarModeLayer, Mathf.Lerp(anim.GetLayerWeight(GravastarModeLayer), 1f, Time.deltaTime * 10f));
+            anim.SetLayerWeight(SupermassiveGravastarModeLayer, Mathf.Lerp(anim.GetLayerWeight(SupermassiveGravastarModeLayer), 0f, Time.deltaTime * 10f));
+        }
+        if(mode == PlayerMode.SupermassiveGravastar)
+        {
+            anim.SetLayerWeight(NormalModeLayer, Mathf.Lerp(anim.GetLayerWeight(NormalModeLayer), 0f, Time.deltaTime * 10f));
+            anim.SetLayerWeight(JetpackModeLayer, Mathf.Lerp(anim.GetLayerWeight(JetpackModeLayer), 0f, Time.deltaTime * 10f));
+            anim.SetLayerWeight(BrokenModeLayer, Mathf.Lerp(anim.GetLayerWeight(BrokenModeLayer), 0f, Time.deltaTime * 10f));
+            anim.SetLayerWeight(InvertingModeLayer, Mathf.Lerp(anim.GetLayerWeight(InvertingModeLayer), 0f, Time.deltaTime * 10f));
+            anim.SetLayerWeight(GravastarModeLayer, Mathf.Lerp(anim.GetLayerWeight(GravastarModeLayer), 0f, Time.deltaTime * 10f));
+            anim.SetLayerWeight(SupermassiveGravastarModeLayer, Mathf.Lerp(anim.GetLayerWeight(SupermassiveGravastarModeLayer), 1f, Time.deltaTime * 10f));
         }
     }
 
@@ -1168,26 +1258,22 @@ public class PlayerController : MonoBehaviour
     {
         RaycastHit2D hit =
             Physics2D.Raycast(
-
                 transform.position,
-
                 UpDirection,
-
                 20f,
+                ground);
 
-                ground
-            );
-
-        if(hit.collider == null)
+        if (hit.collider == null)
             return;
 
+        rb.linearVelocity = Vector2.zero;
+        rb.angularVelocity = 0f;
+
         transform.position =
-
-            hit.point
-
-            -
-
+            hit.point -
             UpDirection;
+
+        Physics2D.SyncTransforms();
     }
 
     //==================================================

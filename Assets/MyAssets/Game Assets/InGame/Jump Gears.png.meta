@@ -1,25 +1,34 @@
 fileFormatVersion: 2
-guid: fc46aae857dafbe4dbf4ac041e3e869f
+guid: a598524724b4f71439ac74df67c6bdd3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -76811366209591739
-    second: Jump Gears_0
+      213: 1421848997045327314
+    second: ChatGPT Image Aug 7, 2026, 06_27_31 PM_0
   - first:
-      213: 8575826644285700216
-    second: Jump Gears_1
+      213: 5383203272861541257
+    second: ChatGPT Image Aug 7, 2026, 06_27_31 PM_1
   - first:
-      213: -7101882863558248274
-    second: Jump Gears_2
+      213: -743690604446648561
+    second: ChatGPT Image Aug 7, 2026, 06_27_31 PM_2
   - first:
-      213: 4369127978416693032
-    second: Jump Gears_3
+      213: -3774857030181549930
+    second: ChatGPT Image Aug 7, 2026, 06_27_31 PM_3
   - first:
-      213: -6962732494000953798
-    second: Jump Gears_4
+      213: 1407493004043826170
+    second: ChatGPT Image Aug 7, 2026, 06_27_31 PM_4
   - first:
-      213: 8211542956057035670
-    second: Jump Gears_5
+      213: 8326279788963524578
+    second: ChatGPT Image Aug 7, 2026, 06_27_31 PM_5
+  - first:
+      213: 8263837635759615182
+    second: ChatGPT Image Aug 7, 2026, 06_27_31 PM_6
+  - first:
+      213: -2296374499500684980
+    second: ChatGPT Image Aug 7, 2026, 06_27_31 PM_7
+  - first:
+      213: 4423955903959661940
+    second: ChatGPT Image Aug 7, 2026, 06_27_31 PM_8
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -141,13 +150,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Normal
+      name: Gear Outline
       rect:
         serializedVersion: 2
-        x: 7
-        y: 298
-        width: 372
-        height: 446
+        x: 110
+        y: 589
+        width: 263
+        height: 248
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,74 +165,162 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5466d5a287c1feef0800000000000000
-      internalID: -76811366209591739
+      spriteID: 2d5d129212c6bb310800000000000000
+      internalID: 1421848997045327314
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flip
+      name: Jump Gear Inside
       rect:
         serializedVersion: 2
-        x: 389
-        y: 303
-        width: 375
-        height: 442
+        x: 400
+        y: 628
+        width: 172
+        height: 173
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 5da8a970dfb23014fa8678c2e56513d6
-      internalID: 1555836969
+      spriteID: 983e1a0fadaf4ba40800000000000000
+      internalID: 5383203272861541257
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Drop Flip
+      name: Gravity Gear Inside
       rect:
         serializedVersion: 2
-        x: 777
-        y: 303
-        width: 365
-        height: 441
+        x: 596
+        y: 627
+        width: 174
+        height: 174
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 358b4140d4a14b34b9552584e2e6436b
-      internalID: -31340101
+      spriteID: f077923e551eda5f0800000000000000
+      internalID: -743690604446648561
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Drop
+      name: Drop Gear Inside
       rect:
         serializedVersion: 2
-        x: 1147
-        y: 308
-        width: 380
-        height: 439
+        x: 784
+        y: 626
+        width: 177
+        height: 175
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 87a0922589429d14796c6d53584d0a1a
-      internalID: -34525394
+      spriteID: 6988426f7830d9bc0800000000000000
+      internalID: -3774857030181549930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trigger Gear Inside
+      rect:
+        serializedVersion: 2
+        x: 1158
+        y: 628
+        width: 172
+        height: 173
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af331e11e6b688310800000000000000
+      internalID: 1407493004043826170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drop Gravity Gear Inside
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 627
+        width: 173
+        height: 174
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ef6fa18a53ec8370800000000000000
+      internalID: 8326279788963524578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dash Gear Inside
+      rect:
+        serializedVersion: 2
+        x: 1337
+        y: 629
+        width: 172
+        height: 172
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c490ff53f83a120e0800000000000000
+      internalID: -2296374499500684980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gear Normal Map
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 193
+        width: 281
+        height: 264
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47df18d947c056d30800000000000000
+      internalID: 4423955903959661940
       vertices: []
       indices: 
       edges: []
@@ -232,7 +329,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 4440305082b36ed43bd125c9ca99fe74
+    spriteID: 0ea88c5ef72aab04e8b27e314bd1426b
     internalID: 0
     vertices: []
     indices: 
@@ -242,15 +339,15 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Drop: -34525394
-      Drop Flip: -31340101
-      Flip: 1555836969
-      Jump Gears_1: 8575826644285700216
-      Jump Gears_2: -7101882863558248274
-      Jump Gears_3: 4369127978416693032
-      Jump Gears_4: -6962732494000953798
-      Jump Gears_5: 8211542956057035670
-      Normal: -76811366209591739
+      ChatGPT Image Aug 7, 2026, 06_27_31 PM_6: 8263837635759615182
+      Dash Gear Inside: -2296374499500684980
+      Drop Gear Inside: -3774857030181549930
+      Drop Gravity Gear Inside: 8326279788963524578
+      Gear Normal Map: 4423955903959661940
+      Gear Outline: 1421848997045327314
+      Gravity Gear Inside: -743690604446648561
+      Jump Gear Inside: 5383203272861541257
+      Trigger Gear Inside: 1407493004043826170
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

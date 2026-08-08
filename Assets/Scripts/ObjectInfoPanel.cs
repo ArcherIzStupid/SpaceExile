@@ -10,6 +10,7 @@ public class ObjectInfoPanel : MonoBehaviour
     public GameObject floatParameterPrefab;
     public GameObject boolParameterPrefab;
     public GameObject dropdownParameterPrefab;
+    public GameObject textReadonly;
 
     public void ShowObject(EditableObject obj)
     {
@@ -67,5 +68,21 @@ public class ObjectInfoPanel : MonoBehaviour
             );
 
         return field.GetComponent<ParameterDropdown>();
+    }
+
+    public void AddField(string label, string value)
+    {
+        GameObject field =
+            Instantiate(
+                textReadonly,
+                content
+            );
+        
+        field
+            .GetComponent<ObjectText>()
+            .Setup(
+                label,
+                value
+            );
     }
 }

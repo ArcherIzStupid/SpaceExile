@@ -6,7 +6,7 @@ public class GearController : MonoBehaviour
     public static GearController currentGear;
     public GearType gearType;
     public float gearForce = 1;
-    public Vector3 rotationSpeed = new Vector3(0, 0, 10);
+    
 
     [Header("Gravity")]
 
@@ -15,6 +15,11 @@ public class GearController : MonoBehaviour
     [Range(0,360)]
 
     public float customAngle;
+
+    [Header("Rotation")]
+
+    public Vector3 rotationSpeed = new Vector3(0, 0, 10);
+    public Transform gearOutside;
 
     void OnTriggerEnter2D(
         Collider2D other
@@ -44,7 +49,7 @@ public class GearController : MonoBehaviour
     }
     void Update()
     {
-        transform.Rotate(rotationSpeed * Time.deltaTime);
+        gearOutside.Rotate(rotationSpeed * Time.deltaTime);
     }
 
     public Vector2 EndGravityVector

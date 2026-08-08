@@ -31,22 +31,23 @@ public class EditorToolBar : MonoBehaviour
     {
         selectedObject = editable;
 
-        RefreshButtons();
-
         EditorGizmoManager.instance
             .SetSelectedObject(editable);
+
+        RefreshButtons();
     }
 
     public void ClearSelectedObject()
     {
         selectedObject = null;
-
+    
+        EditorGizmoManager.instance
+            .ClearSelectedObject();
+    
         RefreshButtons();
-
-        EditorGizmoManager.instance.Clear();
     }
 
-    private void SelectTool(EditorTool tool)
+    public void SelectTool(EditorTool tool)
     {
         if (!CanUseTool(tool))
             return;
@@ -72,11 +73,7 @@ public class EditorToolBar : MonoBehaviour
 
         if (!CanUseTool(activeTool))
         {
-            EditorGizmoManager.instance
-                .SetTool(GetFirstAvailableTool());
-
-            activeTool =
-                EditorGizmoManager.instance.CurrentTool;
+            activeTool = EditorTool.None;
         }
 
         RefreshSelectedVisuals(activeTool);
