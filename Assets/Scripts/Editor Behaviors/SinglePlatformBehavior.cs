@@ -62,8 +62,7 @@ public class SinglePlatformBehavior : MonoBehaviour, IEditableComponent, IEditab
             });
     }
 
-    public void BuildGizmos(
-        EditorGizmoManager manager)
+    public void BuildGizmos(EditorGizmoManager manager)
     {
         switch (manager.CurrentTool)
         {

@@ -31,31 +31,7 @@ public enum PlayerSpeed
     Twice,
     Thrice
 }
-public enum GearType
-{
-    Jump,
-    Gravity,
-    DropGravity,
-    Drop,
-    Trigger,
-    Dash
-}
 
-public enum GravityDirectionType
-{
-    Down,
-    Up,
-    Left,
-    Right,
-
-    DownRight,
-    DownLeft,
-
-    UpRight,
-    UpLeft,
-
-    Custom
-}
 public class PlayerController : MonoBehaviour
 {
     //==================================================

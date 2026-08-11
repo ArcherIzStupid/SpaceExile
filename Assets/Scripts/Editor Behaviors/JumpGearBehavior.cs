@@ -1,24 +1,15 @@
-using System.Diagnostics;
 using UnityEngine;
 
-public class GravityGearBehavior : MonoBehaviour, IEditableComponent, IEditableGizmo, IEditorToolCapabilities
+public class JumpGearBehavior : MonoBehaviour, IEditableComponent, IEditableGizmo, IEditorToolCapabilities
 {
     public GearController controller;
-    public EditableObject editable;
-    public PlayerController player;
 
     void Start()
     {
-        editable = GetComponent<EditableObject>();
-        player = GetComponent<PlayerController>();
+        controller = GetComponent<GearController>();
     }
-
     public void BuildEditor(ObjectInfoPanel panel)
     {
-        panel.AddField(
-            "Object ID:",
-            editable.objectID.ToString()
-        );
         panel.AddFloat(
             "X Position",
             transform.position.x,
@@ -29,7 +20,7 @@ public class GravityGearBehavior : MonoBehaviour, IEditableComponent, IEditableG
                     transform.position.y,
                     transform.position.z);
             });
-        
+
         panel.AddFloat(
             "Y Position",
             transform.position.y,
@@ -51,20 +42,28 @@ public class GravityGearBehavior : MonoBehaviour, IEditableComponent, IEditableG
                     value,
                     transform.localScale.z);
             });
-        
+
         panel.AddFloat(
-            "Gravity Angle",
-            player.Vector2Angle(PlayerController.gravityDirection),
+            "Jump Force",
+            controller.gearForce,
             value =>
             {
-                player.Vector2Angle(PlayerController.gravityDirection);
-            }
-        );
+                controller.gearForce = value;
+            });
     }
 
     public void BuildGizmos(EditorGizmoManager manager)
     {
-        throw new System.NotImplementedException();
+        switch (manager.CurrentTool)
+        {
+            case EditorTool.Move:
+                manager.AddMoveHandle(transform);
+                break;
+    
+            case EditorTool.Scale:
+                // manager.AddScaleHandle(this);
+                break;
+        }
     }
 
     public bool CanUseTool(EditorTool tool)
@@ -78,6 +77,5 @@ public class GravityGearBehavior : MonoBehaviour, IEditableComponent, IEditableG
             default:
                 return false;
         }
- 
-   }
+    }
 }

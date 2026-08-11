@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Rendering.HighDefinition;
 
-public class GravityTriggerBehavior : TriggerBehavior, IEditableComponent, IEditableGizmo
+public class GravityTriggerBehavior : TriggerBehavior, IEditableComponent, IEditableGizmo, IEditorToolCapabilities
 {
     public float positionX;
     public float postiionY;
@@ -67,6 +67,28 @@ public class GravityTriggerBehavior : TriggerBehavior, IEditableComponent, IEdit
 
     public void BuildGizmos(EditorGizmoManager manager)
     {
-        manager.AddMoveHandle(gameObject.transform);
+        switch (manager.CurrentTool)
+        {
+            case EditorTool.Move:
+                manager.AddMoveHandle(transform);
+                break;
+    
+            case EditorTool.Scale:
+                // manager.AddScaleHandle(this);
+                break;
+        }
+    }
+
+    public bool CanUseTool(EditorTool tool)
+    {
+        switch (tool)
+        {
+            case EditorTool.Move:
+            case EditorTool.Scale:
+                return true;
+
+            default:
+                return false;
+        }
     }
 }

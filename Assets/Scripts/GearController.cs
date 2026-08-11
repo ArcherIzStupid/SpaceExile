@@ -1,5 +1,36 @@
 using UnityEngine;
 
+public enum GearType
+{
+    Jump,
+    Gravity,
+    DropGravity,
+    Drop,
+    Trigger,
+    Dash
+}
+
+public enum GravityDirectionType
+{
+    Down,
+    Up,
+    Left,
+    Right,
+
+    DownRight,
+    DownLeft,
+
+    UpRight,
+    UpLeft,
+
+    Custom
+}
+
+public enum TriggerGearTargetType
+{
+    Object,
+    Group
+}
 
 public class GearController : MonoBehaviour
 {
